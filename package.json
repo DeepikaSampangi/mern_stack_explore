@@ -1,0 +1,23 @@
+{
+  "name": "mern_stack_explore",
+  "version": "1.0.0",
+  "description": "MERN Stack Explore features",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepikaSampangi/mern_stack_explore.git"
+  },
+  "author": "Deepika Sampangi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepikaSampangi/mern_stack_explore/issues"
+  },
+  "homepage": "https://github.com/DeepikaSampangi/mern_stack_explore#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
