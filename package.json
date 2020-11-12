@@ -4,8 +4,10 @@
   "description": "MERN Stack Explore features",
   "main": "index.js",
   "scripts": {
+    "compile":"babel src --out-dir public",
     "start": "node server/server.js",
-    "test": "test"
+    "test": "test",
+    "watch": "babel src --out-dir public --watch --verbose"
   },
   "repository": {
     "type": "git",
