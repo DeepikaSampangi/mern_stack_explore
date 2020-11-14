@@ -4,14 +4,14 @@
   "description": "MERN Stack Explore features",
   "main": "index.js",
   "scripts": {
-    "compile":"babel src --out-dir public",
-    "start": "node server/server.js",
-    "test": "test",
-    "watch": "babel src --out-dir public --watch --verbose"
+    "start": "nodemon -w server server/server.js",
+    "compile": "babel src --out-dir public",
+    "watch": "babel src --out-dir public --watch --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeepikaSampangi/mern_stack_explore.git"
+    "url": "https://github.com/DeepikaSampangi/mern_stack_explore.git"
   },
   "author": "Deepika Sampangi",
   "license": "ISC",
@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/DeepikaSampangi/mern_stack_explore#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
-    "@babel/preset-react": "^7.12.5"
+    "@babel/preset-react": "^7.12.5",
+    "@babel/preset-env": "^7.2.3"
   }
 }

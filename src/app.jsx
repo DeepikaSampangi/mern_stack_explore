@@ -1,18 +1,17 @@
-// const element = (
-//     <div title="Outer_div">
-//         <h1>Hello There From JSX using Express App, from a js file</h1>    
-//     </div>
-// );
-// ReactDOM.render(element, document.getElementById('content'));
-
-class HelloWorld extends React.Component{
-    render(){
-        return (
-            <div title="Outer_div">
-                <h1>Hello There From JSX using Express App, from a js file</h1>    
-            </div>
-        );
+class HelloWorld extends React.Component {
+    render() {
+      const continents = ['Africa','America','Asia','Australia','Europe'];
+      const helloContinents = Array.from(continents, c => `Hello ${c}!`);
+      const message = helloContinents.join(' ');
+  
+      return (
+        <div title="Outer div">
+          <h1>{message}</h1>
+        </div>
+      );
     }
-}
-
-const element = <HelloWorld />;
+  }
+  
+  const element = <HelloWorld />;
+  
+  ReactDOM.render(element, document.getElementById('contents'));
