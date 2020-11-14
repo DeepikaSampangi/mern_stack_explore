@@ -71,13 +71,11 @@ var IssueTable = /*#__PURE__*/function (_React$Component2) {
         style: rowStyle
       }, "Title"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement(IssueRow, {
         rowStyle: rowStyle,
-        issue_id: 1,
-        issue_title: "Error in console when clicking add"
-      }), /*#__PURE__*/React.createElement(IssueRow, {
+        issue_id: 1
+      }, "Error in console when clicking add"), /*#__PURE__*/React.createElement(IssueRow, {
         rowStyle: rowStyle,
-        issue_id: 2,
-        issue_title: "JS is just too much"
-      })));
+        issue_id: 2
+      }, /*#__PURE__*/React.createElement("div", null, "Missing ", /*#__PURE__*/React.createElement("b", null, "bottom"), " border on panel"))));
     }
   }]);
 
@@ -103,22 +101,49 @@ var IssueRow = /*#__PURE__*/function (_React$Component3) {
         style: style
       }, this.props.issue_id), /*#__PURE__*/React.createElement("td", {
         style: style
-      }, this.props.issue_title));
+      }, this.props.children));
     }
   }]);
 
   return IssueRow;
 }(React.Component);
 
-var IssueAdd = /*#__PURE__*/function (_React$Component4) {
-  _inherits(IssueAdd, _React$Component4);
+var borderWrap = /*#__PURE__*/function (_React$Component4) {
+  _inherits(borderWrap, _React$Component4);
 
-  var _super4 = _createSuper(IssueAdd);
+  var _super4 = _createSuper(borderWrap);
+
+  function borderWrap() {
+    _classCallCheck(this, borderWrap);
+
+    return _super4.apply(this, arguments);
+  }
+
+  _createClass(borderWrap, [{
+    key: "render",
+    value: function render() {
+      var borderedStyle = {
+        border: "1px solid silver",
+        padding: 6
+      };
+      return /*#__PURE__*/React.createElement("div", {
+        style: borderedStyle
+      }, this.props.children);
+    }
+  }]);
+
+  return borderWrap;
+}(React.Component);
+
+var IssueAdd = /*#__PURE__*/function (_React$Component5) {
+  _inherits(IssueAdd, _React$Component5);
+
+  var _super5 = _createSuper(IssueAdd);
 
   function IssueAdd() {
     _classCallCheck(this, IssueAdd);
 
-    return _super4.apply(this, arguments);
+    return _super5.apply(this, arguments);
   }
 
   _createClass(IssueAdd, [{
@@ -131,15 +156,15 @@ var IssueAdd = /*#__PURE__*/function (_React$Component4) {
   return IssueAdd;
 }(React.Component);
 
-var IssueList = /*#__PURE__*/function (_React$Component5) {
-  _inherits(IssueList, _React$Component5);
+var IssueList = /*#__PURE__*/function (_React$Component6) {
+  _inherits(IssueList, _React$Component6);
 
-  var _super5 = _createSuper(IssueList);
+  var _super6 = _createSuper(IssueList);
 
   function IssueList() {
     _classCallCheck(this, IssueList);
 
-    return _super5.apply(this, arguments);
+    return _super6.apply(this, arguments);
   }
 
   _createClass(IssueList, [{
