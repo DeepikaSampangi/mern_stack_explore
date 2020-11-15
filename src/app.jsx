@@ -1,4 +1,4 @@
-const issues = [
+const initialIssues = [
   {
     id: 1, status: 'New', owner: 'Ravan', effort: 5,
     created: new Date('2018-08-15'), due: undefined,
@@ -10,6 +10,11 @@ const issues = [
     title: 'Missing bottom border on panel',
   },
 ];
+
+const sampleIssue = {
+  status: 'New', owner: 'Pieta',
+  title: 'Completion date should be optional',
+};
 
 class IssueFilter extends React.Component {
   render() {
@@ -37,8 +42,24 @@ class IssueRow extends React.Component {
 }
 
 class IssueTable extends React.Component {
+  constructor(){
+    super();
+    this.state = {issues: []};
+  }
+  componentDidMount(){
+    this.loadData();
+  }
+  loadData(){
+    setTimeout(() =>{
+        this.setState({issue: initialIssues});
+      }, 500);
+  }
+  createIssue(){
+    issue.id = this.state.issues.length + 1;
+    issue.created = new Date();
+  }
   render() {
-    const issueRows = issues.map(issue =>
+    const issueRows = this.state.issues.map(issue =>
       <IssueRow key={issue.id} issue={issue} />
     );
 
