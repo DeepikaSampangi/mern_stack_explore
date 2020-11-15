@@ -42,22 +42,32 @@ class IssueRow extends React.Component {
 }
 
 class IssueTable extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {issues: []};
+    this.state = { issues: [] };
+    setTimeout(() => {
+      this.createIssue(sampleIssue);
+    }, 2000);
   }
-  componentDidMount(){
+
+  componentDidMount() {
     this.loadData();
   }
-  loadData(){
-    setTimeout(() =>{
-        this.setState({issue: initialIssues});
-      }, 500);
+
+  loadData() {
+    setTimeout(() => {
+      this.setState({ issues: initialIssues });
+    }, 500);
   }
-  createIssue(){
+
+  createIssue(issue) {
     issue.id = this.state.issues.length + 1;
     issue.created = new Date();
+    const newIssueList = this.state.issues.slice();
+    newIssueList.push(issue);
+    this.setState({ issues: newIssueList });
   }
+
   render() {
     const issueRows = this.state.issues.map(issue =>
       <IssueRow key={issue.id} issue={issue} />
